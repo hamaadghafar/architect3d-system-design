@@ -4,9 +4,9 @@
 
 It covers **8 modules · 34 topics · 34 interactive 3D models · 170+ interview questions**, from public/private/hybrid cloud networking through to end-to-end designs of a URL shortener, Netflix-style streaming, Uber-style ride matching and WhatsApp-style chat.
 
-> **Live demo:** _deployed on Cloudflare Pages — link coming soon._
+> **Live demo:** **[systemdesign-3d.pages.dev](https://systemdesign-3d.pages.dev)** — try a lab directly: [VPN vs. Direct Connect with a link failure](https://systemdesign-3d.pages.dev/topics/m1/vpn-direct-connect/lab?link=vpn&failure=1&rate=80)
 >
-> _Screenshot / GIF placeholder — add `docs/screenshot.png` and reference it here._
+> **Source:** [github.com/hamaadghafar/architect3d-system-design](https://github.com/hamaadghafar/architect3d-system-design)
 
 ---
 
@@ -51,8 +51,8 @@ It covers **8 modules · 34 topics · 34 interactive 3D models · 170+ interview
 **Prerequisites:** Node.js **20.19+ or 22.12+** (required by Vite 8) and npm.
 
 ```bash
-git clone <repo-url>
-cd <repo-folder>
+git clone https://github.com/hamaadghafar/architect3d-system-design.git
+cd architect3d-system-design
 npm install
 npm run dev        # http://localhost:5173
 ```
@@ -101,6 +101,16 @@ src/
 ---
 
 ## Deployment (Cloudflare Pages)
+
+The live site is deployed with Wrangler (Cloudflare Pages project `systemdesign-3d`):
+
+```bash
+npx wrangler login                 # once per machine
+npm run build
+npx wrangler pages deploy dist --project-name systemdesign-3d --branch main
+```
+
+Alternatively, connect the GitHub repo in the Cloudflare dashboard (**Workers & Pages → Create → Pages → Connect to Git**) for automatic deploys on every push, using these settings:
 
 | Setting | Value |
 |---|---|
