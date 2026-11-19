@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #0b1120;
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Thin dark scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1e293b transparent;
+}
+
+/* ---------- 3D labels rendered through drei <Html> ---------- */
+/* One short name per node: text-xs font-medium px-2.5 py-1 rounded-md bg-slate-950/90 border-slate-700/80 */
+.node-label {
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: #e2e8f0;
+  background: rgba(2, 6, 23, 0.9);
+  border: 1px solid rgba(51, 65, 85, 0.8);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.node-label.is-active {
+  border-color: rgba(34, 211, 238, 0.9);
+  box-shadow: 0 0 16px rgba(34, 211, 238, 0.4);
+}
+.node-label.is-failed {
+  border-color: rgba(239, 68, 68, 0.9);
+  color: #fecaca;
+}
+.link-down {
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fecaca;
+  background: rgba(127, 29, 29, 0.9);
+  border: 1px solid #ef4444;
+}
+.zone-label {
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.zone-label .zsub {
+  display: block;
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  opacity: 0.75;
+}
+.link-label {
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(4, 6, 12, 0.75);
+}
+
+/* ---------- Rich text in curriculum ---------- */
+.rich strong {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+.rich code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(56, 189, 248, 0.1);
+  color: #7dd3fc;
+}

@@ -1,0 +1,23 @@
+/** Shared colour language across every scene. */
+export const C = {
+  request: '#22d3ee',
+  response: '#a3e635',
+  write: '#f472b6',
+  replicate: '#c084fc',
+  miss: '#fbbf24',
+  error: '#ef4444',
+  stale: '#fb923c',
+  public: '#38bdf8',
+  private: '#f59e0b',
+  hybrid: '#a78bfa',
+  vpn: '#f472b6',
+  dx: '#34d399',
+  neutral: '#64748b',
+  client: '#e2e8f0',
+  server: '#38bdf8',
+  db: '#a78bfa',
+  cache: '#f43f5e',
+  edge: '#22d3ee',
+  gateway: '#34d399',
+  security: '#fb7185',
+} as const;
