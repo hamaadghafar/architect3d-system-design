@@ -4,7 +4,7 @@
 
 It covers **8 modules · 34 topics · 34 interactive 3D models · 170+ interview questions**, from public/private/hybrid cloud networking through to end-to-end designs of a URL shortener, Netflix-style streaming, Uber-style ride matching and WhatsApp-style chat.
 
-> **Live demo:** **[systemdesign-3d.pages.dev](https://systemdesign-3d.pages.dev)** — try a lab directly: [VPN vs. Direct Connect with a link failure](https://systemdesign-3d.pages.dev/topics/m1/vpn-direct-connect/lab?link=vpn&failure=1&rate=80)
+> **Live demo:** **[systemdesign3d-app.pages.dev](https://systemdesign3d-app.pages.dev)** — try a lab directly: [VPN vs. Direct Connect with a link failure](https://systemdesign3d-app.pages.dev/topics/m1/vpn-direct-connect/lab?link=vpn&failure=1&rate=80)
 >
 > **Source:** [github.com/hamaadghafar/architect3d-system-design](https://github.com/hamaadghafar/architect3d-system-design)
 
@@ -102,15 +102,7 @@ src/
 
 ## Deployment (Cloudflare Pages)
 
-The live site is deployed with Wrangler (Cloudflare Pages project `systemdesign-3d`):
-
-```bash
-npx wrangler login                 # once per machine
-npm run build
-npx wrangler pages deploy dist --project-name systemdesign-3d --branch main
-```
-
-Alternatively, connect the GitHub repo in the Cloudflare dashboard (**Workers & Pages → Create → Pages → Connect to Git**) for automatic deploys on every push, using these settings:
+The live site is the Cloudflare Pages project `systemdesign3d-app`, connected to this GitHub repo: **every push to `main` builds and deploys automatically**, and other branches get preview URLs. Build settings:
 
 | Setting | Value |
 |---|---|
@@ -120,6 +112,14 @@ Alternatively, connect the GitHub repo in the Cloudflare dashboard (**Workers & 
 | Environment variable | `NODE_VERSION=22` |
 
 Client-side routes work on refresh because Cloudflare Pages serves `index.html` for unknown paths when the project has no top-level `404.html` (single-page-application mode).
+
+To deploy manually from the CLI instead (e.g. to a separate project), use Wrangler:
+
+```bash
+npx wrangler login                 # once per machine
+npm run build
+npx wrangler pages deploy dist --project-name <project-name> --branch main
+```
 
 ---
 
